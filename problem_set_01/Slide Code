@@ -112,7 +112,7 @@ Efficiency (Pareto), Stability / No justified envy (fairness), Strategy-proofnes
 % =========================
 \begin{frame}{Evaluating and Comparing Designs (trade-offs)}
 \begin{columns}[T,onlytextwidth]
-\column{0.52\textwidth}
+\column{0.45\textwidth}
 \begin{table}
 \small
 \begin{tabular}{@{}lccc@{}}
@@ -127,7 +127,7 @@ IA  & $\circ$ & $\times$ & $\times$ \\
 \end{table}
 {\footnotesize $\checkmark$ strong \;\; $\circ$ depends/partial \;\; $\times$ weak}
 
-\column{0.48\textwidth}
+\column{0.45\textwidth}
 \centering
 \begin{tikzpicture}[scale=0.95, every node/.style={font=\scriptsize}]
   % Triangle vertices
