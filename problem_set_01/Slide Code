@@ -111,7 +111,7 @@ Efficiency (Pareto), Stability / No justified envy (fairness), Strategy-proofnes
 % Slide 7: Evaluating and Comparing Designs (for Exercise 2 later) + chart
 % =========================
 \begin{frame}{Evaluating and Comparing Designs (trade-offs)}
-\begin{columns}[T,onlytextwidth]
+\includegraphics[width=0.95\linewidth]{...}
 \column{0.45\textwidth}
 \begin{table}
 \small
