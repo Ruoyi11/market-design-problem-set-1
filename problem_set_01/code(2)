@@ -119,10 +119,12 @@ Pick the model that matches the \textbf{institutional constraints} (capacity, tr
 \begin{itemize}
   \item \textbf{Coordination failures}: decentralized offers/waitlists create congestion and inefficiency.
   \item \textbf{Incentive problems}: strategic misreporting under non-strategy-proof rules (e.g., Boston mechanism).
+  \item \textbf{Rent-Seeking}: In \textbf{high-frequency trading} the processing of orders often leads to arbitrage opportunities contingent on speed, leading to a \textbf{rent seeking competition} without clear societal benefits.
   \item \textbf{Design interacts with market power}:
   \begin{itemize}
     \item Market power can be exercised \textbf{through} the mechanism's rules.
-    \item Powerful participants may resist reforms if they profit from inefficiencies.
+    \item Powerful participants may \textbf{resist reforms} if they profit from inefficiencies.
+    \item If agents have an \textbf{incentive to participate in a market}, it can increase revenue more than an optimal auctioning process, meaning \textbf{securing participation} can be more important than design.
   \end{itemize}
   \item Bottom line: a bad mechanism can generate inefficiency \textbf{even absent imperfect competition}.
 \end{itemize}
@@ -132,8 +134,10 @@ Pick the model that matches the \textbf{institutional constraints} (capacity, tr
 % Slide 7: Evaluating & Comparing (trade-offs + optional figure)
 % =========================
 \begin{frame}{Evaluating and Comparing Designs (trade-offs)}
-\begin{columns}[T,onlytextwidth]
-\column{0.52\textwidth}
+
+\centering
+
+% ---- Table on top ----
 \begin{table}
 \small
 \begin{tabular}{@{}lccc@{}}
@@ -148,17 +152,12 @@ HZ  & \checkmark (ex-ante) & $\circ$ & $\circ$ (SP-L) \\
 \bottomrule
 \end{tabular}
 \end{table}
+
 {\footnotesize $\checkmark$ strong \;\; $\circ$ context-dependent \;\; $\times$ weak}
 
-\vspace{0.5em}
-% Optional: add Figure 1 (cutoff/price-like interpretation)
-% Put the image at: figures/figure1_cutoffs.png
-% \begin{center}
-% \includegraphics[width=0.92\linewidth]{figures/figure1_cutoffs.png}
-% \end{center}
+\vspace{0.6cm}
 
-\column{0.48\textwidth}
-\centering
+% ---- Figure underneath ----
 \begin{tikzpicture}[scale=0.95, every node/.style={font=\scriptsize}]
   \coordinate (E) at (0,2.6);
   \coordinate (F) at (-2.2,0);
@@ -182,7 +181,7 @@ HZ  & \checkmark (ex-ante) & $\circ$ & $\circ$ (SP-L) \\
   \node[align=left] at (0,-0.6)
   {\scriptsize You rarely get all three.\\ \scriptsize Design is choosing a principled compromise.};
 \end{tikzpicture}
-\end{columns}
+
 \end{frame}
 
 % =========================
