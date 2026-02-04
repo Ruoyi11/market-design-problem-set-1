@@ -114,6 +114,7 @@ Efficiency (Pareto), Stability / No justified envy (fairness), Strategy-proofnes
 
 % Table first
 \begin{table}
+\vspace{0.4 cm}
 \centering
 \small
 \begin{tabular}{@{}lccc@{}}
