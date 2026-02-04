@@ -1,0 +1,241 @@
+\documentclass[10pt]{beamer}
+
+% ---------- Theme (stable + clean) ----------
+\usetheme{Madrid}
+\usecolortheme{dolphin}
+\setbeamertemplate{navigation symbols}{}
+
+% ---------- Packages ----------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+% ---------- Title ----------
+\title[Market Design]{Chapter 4 Summary:\\Market Design}
+\subtitle{Diagnose failures, compare mechanisms, and improve institutions\\(Agarwal \& Budish, 2021)}
+\author{Ruoyi Shi; \quad Keyan Dehghan}
+\date{ECN 591 \;\; | \;\; Spring 2026}
+
+\begin{document}
+
+% =========================
+% Slide 1: Title
+% =========================
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% =========================
+% Slide 2: Big picture + IO connection
+% =========================
+\begin{frame}{Why Market Design? (and why IO should care)}
+\begin{itemize}
+  \item Real markets are \textbf{rule-based institutions}, not just abstract supply--demand diagrams.
+  \item Market design studies how \textbf{rules shape actions, incentives, information, and allocations}.
+  \item Two key links to \textbf{Industrial Organization (IO)}:
+  \begin{itemize}
+    \item \textbf{Market failures}: identify sources, then engineer fixes.
+    \item \textbf{Institutional detail}: small implementation choices can have large welfare effects.
+  \end{itemize}
+  \item Design issues can matter even without classic market power (and can also \textbf{interact} with market power).
+\end{itemize}
+\end{frame}
+
+% =========================
+% Slide 3: Taxonomy (organizing environments)
+% =========================
+\begin{frame}{A practical taxonomy of market design problems}
+\begin{itemize}
+  \item \textbf{Matching vs. Allocation}:
+  \begin{itemize}
+    \item Matching: two sides are agents (workers--firms, students--schools).
+    \item Allocation: one side is objects (housing units, courses, kidneys).
+  \end{itemize}
+  \item \textbf{Transferable vs. Non-transferable utility}:
+  \begin{itemize}
+    \item With a numeraire (wages/prices) vs. no (or fixed) transfers.
+    \item ``No transfers'' includes settings with money but \textbf{wages fixed outside the mechanism}.
+  \end{itemize}
+  \item \textbf{Single-unit vs. Multi-unit demand}: one-to-one, many-to-one, combinatorial bundles.
+  \item \textbf{Endowments / property rights}: initial ownership, priorities, outside options.
+\end{itemize}
+\end{frame}
+
+% =========================
+% Slide 4: Canonical environments (examples)
+% =========================
+\begin{frame}{Canonical environments (workhorse models)}
+\begin{itemize}
+  \item \textbf{One-to-one matching (no transfers)}: Gale--Shapley baseline.
+  \item \textbf{Many-to-one matching}: hospitals/schools with capacities; requires ``responsive'' preferences.
+  \item \textbf{Matching with transfers}: Becker-style transferable utility (surplus split by transfers).
+  \item \textbf{Single-unit assignment}: agents choose among objects; can be ordinal or cardinal.
+  \item \textbf{House allocation / kidney exchange}: endowments matter; trading cycles deliver gains.
+  \item \textbf{School choice}: priorities may be treated as preferences or as policy constraints.
+\end{itemize}
+\vspace{0.3em}
+\begin{block}{Design takeaway}
+Pick the model that matches the \textbf{institutional constraints} (capacity, transfers, priorities, timing).
+\end{block}
+\end{frame}
+
+% =========================
+% Slide 5: Core mechanisms (DA, TTC, etc.)
+% =========================
+\begin{frame}{Core mechanisms: what they do (and why we use them)}
+\begin{columns}[T,onlytextwidth]
+\column{0.49\textwidth}
+\begin{block}{Deferred Acceptance (DA)}
+\begin{itemize}
+  \item Multi-round ``propose--hold--reject''.
+  \item Stable (or \textbf{no justified envy} in school choice priorities view).
+  \item \textbf{Strategy-proof} for the proposing side.
+  \item Many-to-one variant handles capacities.
+\end{itemize}
+\end{block}
+
+\column{0.49\textwidth}
+\begin{block}{Top Trading Cycles (TTC)}
+\begin{itemize}
+  \item For endowments (houses, kidneys).
+  \item Clears cycles recursively.
+  \item \textbf{Strategy-proof} and \textbf{ex-post Pareto efficient}.
+  \item Can violate stability/priority notions in some settings.
+\end{itemize}
+\end{block}
+\end{columns}
+
+\vspace{0.3em}
+\begin{itemize}
+  \item Other common tools: \textbf{Immediate Acceptance (Boston)}, \textbf{Random Serial Dictatorship (RSD)}, \textbf{Hylland--Zeckhauser (HZ) pseudomarket}.
+\end{itemize}
+\end{frame}
+
+% =========================
+% Slide 6: Diagnosing Market Failures (case-based)
+% =========================
+\begin{frame}{Diagnosing Market Failures (what can go wrong)}
+\begin{itemize}
+  \item \textbf{Coordination failures}: decentralized offers/waitlists create congestion and inefficiency.
+  \item \textbf{Incentive problems}: strategic misreporting under non-strategy-proof rules (e.g., Boston mechanism).
+  \item \textbf{Design interacts with market power}:
+  \begin{itemize}
+    \item Market power can be exercised \textbf{through} the mechanism's rules.
+    \item Powerful participants may resist reforms if they profit from inefficiencies.
+  \end{itemize}
+  \item Bottom line: a bad mechanism can generate inefficiency \textbf{even absent imperfect competition}.
+\end{itemize}
+\end{frame}
+
+% =========================
+% Slide 7: Evaluating & Comparing (trade-offs + optional figure)
+% =========================
+\begin{frame}{Evaluating and Comparing Designs (trade-offs)}
+\begin{columns}[T,onlytextwidth]
+\column{0.52\textwidth}
+\begin{table}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Mechanism & Efficiency & Stability/Fairness & Strat.-proof \\
+\midrule
+DA  & $\circ$ & \checkmark & \checkmark \\
+TTC & \checkmark & $\circ/\times$ & \checkmark \\
+IA (Boston) & $\circ$ & $\times$ & $\times$ \\
+RSD & $\circ$ & $\circ$ & \checkmark \\
+HZ  & \checkmark (ex-ante) & $\circ$ & $\circ$ (SP-L) \\
+\bottomrule
+\end{tabular}
+\end{table}
+{\footnotesize $\checkmark$ strong \;\; $\circ$ context-dependent \;\; $\times$ weak}
+
+\vspace{0.5em}
+% Optional: add Figure 1 (cutoff/price-like interpretation)
+% Put the image at: figures/figure1_cutoffs.png
+% \begin{center}
+% \includegraphics[width=0.92\linewidth]{figures/figure1_cutoffs.png}
+% \end{center}
+
+\column{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.95, every node/.style={font=\scriptsize}]
+  \coordinate (E) at (0,2.6);
+  \coordinate (F) at (-2.2,0);
+  \coordinate (I) at (2.2,0);
+
+  \draw[thick] (F) -- (E) -- (I) -- cycle;
+
+  \node[above] at (E) {\textbf{Efficiency}};
+  \node[left]  at (F) {\textbf{Fairness / Stability}};
+  \node[right] at (I) {\textbf{Incentives}};
+
+  \fill (0.7,0.9) circle (2pt);
+  \node[anchor=west] at (0.75,0.9) {DA};
+
+  \fill (-0.3,1.2) circle (2pt);
+  \node[anchor=west] at (-0.25,1.2) {TTC};
+
+  \fill (0.3,0.35) circle (2pt);
+  \node[anchor=west] at (0.35,0.35) {IA};
+
+  \node[align=left] at (0,-0.6)
+  {\scriptsize You rarely get all three.\\ \scriptsize Design is choosing a principled compromise.};
+\end{tikzpicture}
+\end{columns}
+\end{frame}
+
+% =========================
+% Slide 8: Mechanism details that matter in practice
+% =========================
+\begin{frame}{Implementation details can change outcomes}
+\begin{itemize}
+  \item \textbf{Priorities and tie-breaking} (common in school choice):
+  \begin{itemize}
+    \item coarse priorities $\Rightarrow$ many ties;
+    \item single vs multiple tie-breakers can affect perceived fairness and welfare.
+  \end{itemize}
+  \item \textbf{Cutoff / price-like structure}:
+  \begin{itemize}
+    \item DA admits a \textbf{cutoff} interpretation (threshold scores determine feasible choice sets).
+    \item Helps connect matching to \textbf{price theory} and supports empirical work.
+  \end{itemize}
+  \item Practical principle: specify the mechanism \textbf{down to the last rule} (timing, messages, constraints).
+\end{itemize}
+\end{frame}
+
+% =========================
+% Slide 9: Empirics (how we learn from data)
+% =========================
+\begin{frame}{Empirical agenda: estimate preferences, run counterfactuals}
+\begin{itemize}
+  \item Structural empirics parallels IO discrete choice:
+  \begin{itemize}
+    \item random utility models using rank lists, observed matches, or both;
+    \item handle strategic reporting (harder under non-strategy-proof mechanisms).
+  \end{itemize}
+  \item Goal: quantify \textbf{trade-offs} and predict effects of alternative designs.
+  \item Typical workflow:
+  \begin{enumerate}
+    \item model environment + mechanism constraints;
+    \item estimate preferences / priority structure;
+    \item simulate counterfactual mechanisms/policies and welfare impacts.
+  \end{enumerate}
+\end{itemize}
+\end{frame}
+
+% =========================
+% Slide 10: Takeaways
+% =========================
+\begin{frame}{Key takeaways}
+\begin{enumerate}
+  \item Market design studies \textbf{how rules allocate scarce resources} (often without prices).
+  \item IO connection: diagnosing failures + fixing them requires \textbf{institutional detail}.
+  \item Canonical mechanisms (DA, TTC, etc.) come with \textbf{sharp property trade-offs}.
+  \item Empirics is essential: preference estimation + counterfactuals guide real reforms.
+\end{enumerate}
+\vspace{0.6em}
+{\footnotesize Reference: Agarwal, N. \& Budish, E. (2021), ``Market Design'', NBER WP 29367.}
+\end{frame}
+
+\end{document}
